@@ -24,8 +24,8 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 30
-        versionCode 265
-        versionName "2.6.5"
+        versionCode 266
+        versionName "2.6.6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("int", "VERSION_CODE", "${defaultConfig.versionCode}")

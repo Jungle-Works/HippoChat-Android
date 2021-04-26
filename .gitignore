@@ -11,7 +11,6 @@ build/*
 build/
 /captures
 .externalNativeBuild
-/hippocall
 
 .idea
 *.iml
