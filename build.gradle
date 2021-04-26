@@ -28,7 +28,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven { url 'https://jitpack.io' }
 
 //        maven { url "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases"}
 //        maven { url "file:/Users/gurmail/Desktop/guru/jitsi-meet/jitsi-local-sdk/jitsi-lock-screen"}

@@ -9,6 +9,8 @@ apply plugin: 'kotlin-kapt'
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
+    maven { url 'https://jitpack.io' }
+
     mavenCentral()
 }
 

@@ -6,6 +6,12 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'maven-publish'
 
+
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+
 android {
     compileSdkVersion 30
     useLibrary 'org.apache.http.legacy'
@@ -48,12 +54,12 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation (project(':hippo')) { transitive = true }
+    implementation(project(':hippo')) { transitive = true }
     //implementation 'org.webrtc:google-webrtc:1.0.28262'
     implementation 'org.jetbrains.kotlin:kotlin-reflect:1.4.20'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'de.hdodenhof:circleimageview:2.2.0'
-    api ('org.jitsi.react:jitsi-meet-sdk:+') { transitive = true }
+    api('org.jitsi.react:jitsi-meet-sdk:+') { transitive = true }
     implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
 }
 
