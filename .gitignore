@@ -14,10 +14,6 @@ build/
 
 .idea
 *.iml
-/gradle
-/gradle.properties
-/gradlew
-/gradlew.bat
 +build/*
 +*/build/*
 +/*/build/
