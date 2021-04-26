@@ -123,4 +123,4 @@ dependencies {
 
 // This is the library version used when deploying the artifact
 version = library_version
-//apply from: '../upload.gradle';
+apply from: '../upload.gradle';
