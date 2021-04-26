@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="end"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/fugu_dp_1"
+    android:paddingBottom="@dimen/fugu_dp_1">
+
+    <RelativeLayout
+        android:id="@+id/llMessageBg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/fugu_margin_45"
+        android:layout_marginRight="@dimen/fugu_margin_45"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/fugu_margin_1"
+        android:paddingBottom="@dimen/fugu_margin_1">
+
+        <ImageView
+            android:id="@+id/user_image"
+            style="@style/user_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginEnd="5dp"
+            android:layout_toRightOf="@+id/user_image"
+            android:gravity="start"
+            android:singleLine="true"
+            android:layout_marginRight="5dp"
+            android:layout_toEndOf="@+id/user_image" />
+
+        <LinearLayout
+            android:id="@+id/lllist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvUserName"
+            android:layout_toRightOf="@+id/user_image"
+            android:background="@drawable/hippo_chat_special_bg"
+            android:orientation="vertical"
+            android:layout_toEndOf="@+id/user_image">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDataForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/hippo_transparent"
+                app:layoutManager="LinearLayoutManager" />
+
+            <RelativeLayout
+                android:id="@+id/skip_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/btnSkip"
+                    style="@style/lead_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/hippo_transparent"
+                    android:gravity="end|center"
+                    android:paddingRight="@dimen/fugu_padding_8"
+                    android:text="skip"
+                    android:paddingEnd="@dimen/fugu_padding_8"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

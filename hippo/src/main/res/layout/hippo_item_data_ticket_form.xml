@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/fugu_margin_8">
+
+    <TextView
+        android:id="@+id/count_view"
+        style="@style/lead_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="@dimen/fugu_margin_8"
+        android:layout_marginRight="@dimen/fugu_margin_8"
+        android:textSize="@dimen/fugu_text_size_14" />
+
+    <TextView
+        android:id="@+id/title_view"
+        style="@style/lead_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="0dp"
+        android:paddingLeft="0dp"
+        android:textColor="#5a626a" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/attachmentsRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_view"
+        android:layout_marginTop="@dimen/fugu_margin_5"
+        android:layout_marginBottom="@dimen/fugu_margin_5"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rlFeild"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/attachmentsRV"
+        android:layout_marginTop="@dimen/fugu_margin_4"
+        android:background="@drawable/hippo_mullti_selector_bg"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/country_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableEnd="@drawable/hippo_ic_arrow_drop_down"
+            android:drawableRight="@drawable/hippo_ic_arrow_drop_down"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/fugu_padding_10"
+            android:paddingLeft="@dimen/fugu_padding_10"
+            android:textColor="@color/fugu_primary_text_msg_from"
+            android:textSize="@dimen/hippo_text_normal"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/arrow_background_view"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/fugu_margin_2"
+            android:background="@drawable/hippo_arrow_brackground"
+            android:clickable="false"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/action"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/action_view"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:clickable="true"
+                app:srcCompat="@drawable/hippo_ic_arrow"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/doneBT"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/fugu_margin_2"
+                android:background="@drawable/hippo_arrow_brackground"
+                android:clickable="true"
+                android:gravity="center"
+                android:textColor="@color/fugu_white"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/updateIV"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:clickable="true"
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_edit"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ProgressBar
+                android:id="@+id/uploadProgress"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/etInputData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/action"
+            android:layout_toLeftOf="@+id/action"
+            android:layout_toEndOf="@+id/country_picker"
+            android:layout_toRightOf="@+id/country_picker"
+            android:background="@null"
+            android:ellipsize="end"
+            android:hint="Type here"
+            android:maxLines="1"
+            android:padding="@dimen/fugu_margin_8"
+            android:textColor="@color/fugu_primary_text_msg_from"
+            android:textSize="@dimen/fugu_text_size_medium"
+            tools:visibility="visible" />
+
+
+        <com.hippo.utils.InstantAutoComplete
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/action"
+            android:layout_toLeftOf="@+id/action"
+            android:layout_toEndOf="@+id/country_picker"
+            android:layout_toRightOf="@+id/country_picker"
+            android:background="@null"
+            android:ellipsize="end"
+            android:hint="Type here"
+            android:maxLines="1"
+            android:padding="@dimen/fugu_margin_8"
+            android:textColor="@color/fugu_primary_text_msg_from"
+            android:textSize="@dimen/fugu_text_size_medium"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvSkip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlFeild"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="@dimen/fugu_margin_10"
+        android:layout_marginLeft="@dimen/fugu_margin_10"
+        android:padding="@dimen/fugu_margin_5"
+        android:textColor="@color/hippo_red"
+        android:textSize="@dimen/hippo_text_time"
+        android:visibility="gone"
+        tools:text="Skip"
+        tools:visibility="visible" />
+
+
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlFeild"
+        android:layout_marginStart="@dimen/fugu_margin_10"
+        android:layout_marginLeft="@dimen/fugu_margin_10"
+        android:textColor="@color/hippo_red"
+        android:textSize="@dimen/hippo_text_time"
+        android:visibility="gone"
+        tools:text="Error in email" />
+
+    <TextView
+        android:id="@+id/btnSkip"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/rlFeild"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center"
+        android:gravity="end|center"
+        android:paddingStart="@dimen/fugu_padding_15"
+        android:paddingLeft="@dimen/fugu_padding_15"
+        android:paddingTop="@dimen/fugu_padding_5"
+        android:paddingEnd="@dimen/fugu_padding_8"
+        android:paddingRight="@dimen/fugu_padding_8"
+        android:paddingBottom="@dimen/fugu_padding_5"
+        android:text="skip"
+        android:textColor="@color/hippo_blue"
+        android:textSize="@dimen/hippo_text_normal"
+        android:visibility="gone" />
+
+</RelativeLayout>

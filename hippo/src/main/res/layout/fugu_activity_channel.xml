@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/rlRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/hippo_channel_bg"
+        android:orientation="vertical"
+        tools:context="com.hippo.activity.FuguChannelsActivity">
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/my_toolbar"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:id="@+id/llInternet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/fugu_not_connected"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+            <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:gravity="center"
+                    android:textColor="@color/hippo_black"
+                    android:textSize="@dimen/fugu_text_size_small" />
+
+
+        </LinearLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/llInternet"
+                android:visibility="visible">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvChannels"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false" />
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/hippo_bg_disabled"
+            android:visibility="gone" />
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/tvNewConversation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fugu_margin_15"
+                android:onClick="onClick"
+                android:padding="@dimen/fugu_padding_15"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
+
+        <TextView
+                android:id="@+id/tvNoInternet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:padding="@dimen/fugu_padding_20"
+                android:text="@string/fugu_no_internet_connection_retry"
+                android:textColor="@color/fugu_theme_color_primary"
+                android:textSize="@dimen/fugu_text_size_large"
+                android:visibility="gone" />
+
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/tvPoweredBy"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="@string/fugu_powered_by"
+            android:textColor="@color/fugu_text_color_primary"
+            android:textSize="@dimen/fugu_text_size_intermediate"
+            android:visibility="gone" />
+
+    <LinearLayout
+            android:id="@+id/llNoConversation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hippo_no_conversation"
+                />
+
+        <TextView
+                android:id="@+id/noConversationTextView"
+                style="@style/TextViewBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/hippo_you_have_no_chats"
+                android:textColor="@color/hippo_no_conversation"
+                android:gravity="center"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:visibility="gone" />
+
+        <Button
+                android:id="@+id/noChatBtn"
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_90sdp"
+                android:layout_marginEnd="@dimen/_90sdp"
+                android:text="@string/hippo_find_an_expert"
+                android:textColor="@color/hippo_no_chat_btn"
+                android:background="@drawable/fugu_no_chat_selector"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:textSize="@dimen/_14ssp"
+                android:visibility="gone"
+                android:foreground="?android:attr/selectableItemBackground"
+            />
+
+    </LinearLayout>
+
+
+    <com.hippo.utils.FloatingActionButtonExpandable
+            android:id="@+id/createBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/fugu_margin_20"
+            android:layout_marginEnd="@dimen/fugu_margin_20"
+            android:layout_marginBottom="21dp"
+            android:elevation="@dimen/card_elevation"
+            android:visibility="visible"
+            app:fab_content="@string/fugu_create_conversation"
+            app:fab_duration="100"
+            app:fab_expanded="true"
+            app:fab_icon="@drawable/hippo_ic_new_chat"
+            app:fab_text_color="@android:color/white"
+            android:layout_alignParentRight="true" />
+
+
+</RelativeLayout>

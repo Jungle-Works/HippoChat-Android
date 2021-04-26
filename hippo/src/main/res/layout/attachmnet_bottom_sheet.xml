@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/hippo_transparent"
+              android:orientation="vertical">
+
+    <View
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/fugu_margin_10"
+            android:layout_marginBottom="@dimen/fugu_margin_10"
+            android:background="@drawable/curved_bg_button"
+            android:backgroundTint="@color/fugu_white"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_bottom_sheet"
+            android:orientation="vertical"
+            android:paddingStart="10dp"
+            android:paddingTop="@dimen/fugu_margin_10">
+
+        <LinearLayout
+                android:id="@+id/llCamera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/fugu_margin_15">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:tint="@color/hippo_black"
+                    app:srcCompat="@drawable/hippo_ic_camera"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cameraTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="@string/fugu_camera"
+                    android:textAppearance="@style/CustomTextAppearance.TitilliumWeb"
+                    android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/llGallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/fugu_margin_15">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    app:srcCompat="@drawable/hippo_ic_photos"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/photoTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Photos"
+                    android:textAppearance="@style/CustomTextAppearance.TitilliumWeb"
+                    android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/llVideo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/fugu_margin_15">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    app:srcCompat="@drawable/hippo_ic_video_call"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/videoTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:text="Video"
+                    android:textAppearance="@style/CustomTextAppearance.TitilliumWeb"
+                    android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/llAudio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/fugu_margin_15">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:tint="@color/hippo_black"
+                    app:srcCompat="@drawable/hippo_ic_record_audio"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/audioTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="@string/fugu_audio"
+                    android:textAppearance="@style/CustomTextAppearance.TitilliumWeb"
+                    android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/llFiles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/fugu_margin_15">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="-5dp"
+                    android:tint="@color/hippo_black"
+                    app:srcCompat="@drawable/hippo_ic_files"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/fileTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Files"
+                    android:textAppearance="@style/CustomTextAppearance.TitilliumWeb"
+                    android:textSize="18sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/fugu_margin_20"
+    android:layout_marginStart="@dimen/fugu_margin_20"
+    android:background="@drawable/hippo_rounded_rectangle"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="3dp">
+
+    <ImageView
+        android:id="@+id/ivGalleryImage"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:src="@drawable/hippo_placeholder" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/fugu_margin_5"
+        android:background="@color/fugu_blur_black" />
+
+    <TextView
+        android:id="@+id/tvGalleryMessageHeading"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/fugu_padding_4"
+        android:text="Hi welcome to Hippo"
+        android:textColor="@color/fugu_text_color_primary"
+        android:textSize="@dimen/fugu_text_size_medium" />
+
+    <TextView
+        android:id="@+id/tvGalleryMessage"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/fugu_padding_4"
+        android:text="Hi welcome tPlease enter your 10 digit phone number eh kje Hippo"
+        android:textColor="@color/fugu_text_color_primary"
+        android:textSize="@dimen/fugu_text_size_small" />
+
+
+    <LinearLayout
+        android:id="@+id/llGalleryButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+</LinearLayout>

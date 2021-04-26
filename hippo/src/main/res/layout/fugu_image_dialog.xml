@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@android:color/transparent">
+
+
+    <com.hippo.utils.zoomview.ZoomageView
+        android:id="@+id/ivImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:paddingBottom="@dimen/fugu_padding_10"
+        android:paddingLeft="@dimen/fugu_padding_10"
+        android:paddingRight="@dimen/fugu_padding_10"
+        android:paddingTop="30dp" />
+
+
+    <TextView
+        android:id="@+id/tvCross"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/fugu_margin_10"
+        android:paddingTop="@dimen/fugu_padding_20"
+        android:paddingRight="@dimen/fugu_padding_15"
+        android:paddingLeft="@dimen/fugu_padding_15"
+        android:gravity="end"
+        android:text="@string/fugu_cancel"
+        android:background="@drawable/fugu_text_gradient"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/fugu_text_size_large" />
+
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:padding="@dimen/fugu_padding_5"
+            android:layout_margin="@dimen/fugu_margin_10"
+            android:src="@drawable/fugu_send_normal"
+            android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/ivSend"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/fugu_padding_5"
+        android:layout_margin="@dimen/fugu_margin_10"
+        android:background="@drawable/hippo_circle_red"
+        android:visibility="visible"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:padding="7dp"
+            android:src="@drawable/fugu_ic_send"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

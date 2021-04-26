@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+                app:cardElevation="@dimen/fugu_elevation_4"
+                app:cardBackgroundColor="@color/fugu_white"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="@dimen/fugu_padding_10"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/fugu_padding_10"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/desc_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                />
+                <EditText
+                        android:id="@+id/item_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/fugu_dp_40"
+                        android:layout_margin="@dimen/fugu_margin_10"
+                        android:paddingLeft="@dimen/fugu_padding_10"
+                        android:paddingRight="@dimen/fugu_padding_10"
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:maxLength="250"
+                        android:maxLines="4"
+                        android:singleLine="false"
+                        android:scrollbarStyle="insideInset"
+                        android:scrollbars="vertical"
+                        android:overScrollMode="always"
+                        android:background="@drawable/hippo_lead_form_data_shape"
+                />
+
+                <TextView
+                        android:id="@+id/priceText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                />
+                <EditText
+                        android:id="@+id/item_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/fugu_dp_40"
+                        android:layout_margin="@dimen/fugu_margin_10"
+                        android:maxLines="1"
+                        android:maxLength="10"
+                        android:singleLine="true"
+                        android:inputType="number"
+                        android:digits="1234567890."
+                        android:paddingLeft="@dimen/fugu_padding_10"
+                        android:paddingRight="@dimen/fugu_padding_10"
+                        android:background="@drawable/hippo_lead_form_data_shape"
+                />
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+    <RelativeLayout
+            android:id="@+id/cross_button"
+            android:layout_alignParentRight="true"
+            android:layout_width="@dimen/fugu_dp_35"
+            android:layout_height="@dimen/fugu_dp_35">
+
+        <ImageView
+                android:id="@+id/image_cross"
+                android:layout_width="@dimen/fugu_size_25"
+                android:src="@drawable/hippo_ic_cancel"
+                android:layout_alignParentRight="true"
+                android:layout_height="@dimen/fugu_size_25"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:background="@drawable/hippo_tag_rectangle"
+    android:layout_marginBottom="6dp"
+    android:padding="2dp">
+
+    <CheckBox
+        android:id="@+id/cb_item_view"
+        android:layout_width="35dp"
+        android:layout_height="35dp" />
+
+    <RadioButton
+        android:id="@+id/rb_item_view"
+        android:layout_width="35dp"
+        android:layout_height="35dp" />
+
+    <TextView
+        android:id="@+id/item_textview"
+        style="@style/sentText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:textSize="@dimen/hippo_text_normal"
+        android:layout_marginEnd="8dp" />
+
+</LinearLayout>

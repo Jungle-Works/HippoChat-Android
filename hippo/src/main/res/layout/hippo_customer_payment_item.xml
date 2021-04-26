@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="2dp">
+
+    <RelativeLayout
+            android:id="@+id/paymentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#44E1E2E2"
+                android:visibility="visible" />
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fugu_margin_10"
+                android:layout_marginBottom="@dimen/fugu_margin_10"
+                android:gravity="center_horizontal"
+                android:paddingStart="@dimen/fugu_margin_15"
+                android:paddingEnd="@dimen/fugu_margin_15">
+
+            <RadioButton
+                    android:id="@+id/radioBtn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:visibility="gone" />
+
+            <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fugu_margin_10"
+                    android:layout_marginLeft="@dimen/fugu_margin_10"
+                    android:layout_marginEnd="@dimen/fugu_margin_15"
+                    android:layout_marginRight="@dimen/fugu_margin_15"
+                    android:layout_toStartOf="@+id/amountLayout"
+                    android:layout_toLeftOf="@+id/amountLayout"
+                    android:layout_toEndOf="@+id/radioBtn"
+                    android:layout_toRightOf="@+id/radioBtn"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:singleLine="false"
+                    android:textAppearance="@style/TextViewBold"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            <TextView
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:layout_marginStart="@dimen/fugu_margin_10"
+                    android:layout_marginLeft="@dimen/fugu_margin_10"
+                    android:layout_marginEnd="@dimen/fugu_margin_15"
+                    android:layout_marginRight="@dimen/fugu_margin_15"
+                    android:layout_toStartOf="@+id/amountLayout"
+                    android:layout_toLeftOf="@+id/amountLayout"
+                    android:layout_toEndOf="@+id/radioBtn"
+                    android:layout_toRightOf="@+id/radioBtn"
+                    android:ellipsize="end"
+                    android:singleLine="false"
+                    android:textSize="13sp"
+                    android:visibility="visible" />
+
+
+            <LinearLayout
+                    android:id="@+id/amountLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="@dimen/fugu_margin_10"
+                    android:layout_marginLeft="@dimen/fugu_margin_10"
+                    android:layout_marginEnd="@dimen/fugu_margin_10"
+                    android:layout_marginRight="@dimen/fugu_margin_10"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextViewBold"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                <TextView
+                        android:id="@+id/paid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="- PAID -"
+                        android:textAppearance="@style/TextViewBold"
+                        android:textSize="10sp"
+                        android:visibility="gone" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

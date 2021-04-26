@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fugu_margin_8"
+        android:fadeScrollbars="false"
+        android:scrollbarSize="3dp"
+        android:scrollbars="horizontal"
+        android:visibility="visible"
+        />
+
+    <RelativeLayout
+        android:id="@+id/fallbackLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/fugu_margin_10"
+        android:layout_marginBottom="@dimen/fugu_margin_10"
+        android:layout_marginLeft="@dimen/fugu_margin_20"
+        android:layout_marginRight="@dimen/fugu_margin_20"
+        android:background="@drawable/hippo_chat_bg_right_normal"
+        >
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E4E4E4"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:layout_toLeftOf="@+id/tvAssignment"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/tvAssignment" />
+
+        <TextView
+            android:id="@+id/tvAssignment"
+            style="@style/tvfontTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/fugu_padding_10"
+            android:textColor="@color/fugu_black_50"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E4E4E4"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:layout_toRightOf="@+id/tvAssignment"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/tvAssignment" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/cardLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:visibility="gone"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginRight="@dimen/fugu_margin_10"
+        android:layout_marginEnd="@dimen/fugu_margin_10"
+        >
+
+        <include
+            android:id="@+id/cardview"
+            layout="@layout/hippo_agent_snap_itam"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/fugu_white"
+        android:elevation="@dimen/fugu_elevation_4">
+
+
+        <ImageView
+            android:id="@+id/ivBackBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/hippo_margin_16"
+            android:layout_marginLeft="@dimen/hippo_margin_16"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="onClick"
+            android:padding="@dimen/fugu_margin_10"
+            android:src="@drawable/hippo_ic_arrow_back_new"
+            android:tint="@color/hippo_black"
+            android:visibility="visible" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/ivBackBtn"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_toolbar_name"
+                style="@style/CustomTextAppearance.Semibold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textSize="@dimen/fugu_text_size_large" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/pbWebPageLoader"
+        style="@android:style/Widget.Holo.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:indeterminateOnly="true"
+        android:scaleY="5" />
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/loadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <com.hippo.utils.loadingBox.ProgressWheel
+            android:id="@+id/circle_progress"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            wheel:matProg_barColor="#80000000"
+            wheel:matProg_barWidth="2dp"
+            wheel:matProg_fillRadius="false"
+            wheel:matProg_progressIndeterminate="true" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/circle_progress"
+            android:layout_marginTop="@dimen/fugu_margin_10"
+            android:gravity="center"
+            android:text="@string/hippo_payment_loader"
+            android:textColor="@color/fugu_text_color_primary" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

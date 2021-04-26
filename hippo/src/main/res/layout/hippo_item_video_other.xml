@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="start"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/message_source_type"
+            android:layout_width="@dimen/hippo_margin_16"
+            android:layout_height="@dimen/hippo_margin_16"
+            android:layout_alignBottom="@+id/ll_layout"
+            android:layout_marginLeft="@dimen/fugu_margin_6"
+            android:layout_marginRight="@dimen/fugu_padding_3"
+            android:layout_toRightOf="@+id/ll_layout"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/fugu_margin_6"
+            android:layout_marginEnd="@dimen/fugu_padding_3"
+            android:layout_toEndOf="@+id/ll_layout" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/message_source_type1"
+            android:layout_width="@dimen/hippo_margin_16"
+            android:layout_height="@dimen/hippo_margin_16"
+            android:layout_alignBottom="@+id/ll_layout"
+            android:layout_marginLeft="@dimen/fugu_margin_6"
+            android:layout_marginRight="@dimen/fugu_padding_3"
+            android:layout_toRightOf="@+id/ll_layout"
+            android:src="@drawable/hippo_ic_messenger"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/fugu_margin_6"
+            android:layout_marginEnd="@dimen/fugu_padding_3"
+            android:layout_toEndOf="@+id/ll_layout" />
+
+        <RelativeLayout
+            android:id="@+id/ll_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/user_image"
+                style="@style/user_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                />
+
+            <TextView
+                android:id="@+id/tvUserName"
+                style="@style/title"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:breakStrategy="simple"
+                android:gravity="start"
+                android:paddingRight="@dimen/fugu_padding_10"
+                android:singleLine="true"
+                android:layout_toRightOf="@+id/user_image"
+                android:paddingEnd="@dimen/fugu_padding_10"
+                android:layout_toEndOf="@+id/user_image" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llImageMessage"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_below="@+id/tvUserName"
+                android:layout_toRightOf="@+id/user_image"
+                android:background="@drawable/fugu_chat_other_bg"
+                android:padding="@dimen/fugu_margin_3"
+                android:gravity="start"
+                android:orientation="vertical"
+                android:layout_toEndOf="@+id/user_image">
+
+                <RelativeLayout
+                    android:id="@+id/rlImageMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivImageMsg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"
+                        android:transitionName="@string/hippo_activity_image_trans" />
+
+                    <ImageView
+                        android:id="@+id/ivPlay"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignStart="@+id/circle_progress"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="0dp"
+                        android:background="@drawable/hippo_circle_play_blur"
+                        android:paddingStart="18dp"
+                        android:paddingTop="@dimen/fugu_margin_15"
+                        android:paddingEnd="@dimen/fugu_margin_15"
+                        android:paddingBottom="@dimen/fugu_margin_15"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/hippo_ic_play_video"
+                        android:layout_alignLeft="@+id/circle_progress"
+                        android:layout_marginLeft="0dp"
+                        android:paddingLeft="18dp"
+                        android:paddingRight="@dimen/fugu_margin_15" />
+
+                    <LinearLayout
+                        android:id="@+id/llDownload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/hippo_round_transparent_capsule"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/fugu_margin_5"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tvFileSize"
+                            style="@style/receivedText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="12 MB"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/ivDownload"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/fugu_margin_3"
+                            app:srcCompat="@drawable/hippo_download_file_retry"
+                            android:layout_marginStart="@dimen/fugu_margin_3" />
+                    </LinearLayout>
+
+
+                    <com.hippo.utils.loadingBox.ProgressWheel
+                        android:id="@+id/circle_progress"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignTop="@+id/llDownload"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="0dp"
+                        android:padding="@dimen/fugu_margin_5"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone"
+                        wheel:matProg_barColor="#ffffff"
+                        wheel:matProg_barWidth="2dp"
+                        wheel:matProg_fillRadius="false"
+                        wheel:matProg_progressIndeterminate="true" />
+
+                    <RelativeLayout
+                        android:id="@+id/timelayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="@dimen/fugu_margin_10"
+                        android:background="@drawable/hippo_tiangle_bg"
+                        android:gravity="end"
+                        android:minWidth="110dp"
+                        android:orientation="horizontal"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="@dimen/fugu_margin_5"
+                        android:paddingEnd="10dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvImageTime"
+                            style="@style/receivedText.time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginBottom="@dimen/fugu_margin_4"
+                            android:text="5:11 PM"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/hippo_margin_16"
+                            android:layout_height="@dimen/hippo_margin_16"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/fugu_margin_4"
+                            android:layout_marginBottom="@dimen/fugu_margin_4"
+                            android:layout_toRightOf="@id/tvImageTime"
+                            android:visibility="gone"
+                            android:layout_marginStart="@dimen/fugu_margin_4"
+                            android:layout_toEndOf="@id/tvImageTime" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvImgWithText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:textColor="#000"
+                    android:textSize="17sp"
+                    android:visibility="gone"
+
+                    />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</LinearLayout>

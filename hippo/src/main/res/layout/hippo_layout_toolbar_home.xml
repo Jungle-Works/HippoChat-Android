@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/fugu_white"
+        android:elevation="@dimen/fugu_elevation_4">
+
+
+    <LinearLayout
+            android:id="@+id/llBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="@dimen/fugu_margin_10"
+            android:visibility="gone">
+
+        <ImageView
+                android:id="@+id/logout"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/fugu_margin_10"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="onClick"
+                android:padding="@dimen/fugu_margin_5"
+                android:src="@drawable/ic_hippo_logout"
+                android:visibility="visible" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+                android:id="@+id/ivBackBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/hippo_margin_16"
+                android:layout_marginLeft="@dimen/hippo_margin_16"
+                android:padding="@dimen/fugu_margin_10"
+                android:src="@drawable/hippo_ic_arrow_back"
+                android:visibility="visible" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+        <TextView
+                android:id="@+id/tv_toolbar_name"
+                style="@style/TextViewBold"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:textSize="@dimen/_18ssp" />
+
+    </LinearLayout>
+
+
+
+    <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            style="@style/fuguCustomTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:background="@color/hippo_transparent"
+            android:elevation="0dp"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            app:tabPaddingEnd="10dp"
+            app:tabPaddingStart="10dp"
+            app:tabBackground="@android:color/transparent"
+            app:tabRippleColor="@null"
+            app:tabSelectedTextColor="@color/fugu_text_color_primary"
+            app:tabTextColor="@color/fugu_secondary_text_msg_you" />
+
+
+</RelativeLayout>

@@ -1,0 +1,182 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.hippo">
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+
+    <!-- Permissions to use CAMERA -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <!-- Permissions to use CAMERA with AUTO-FOCUS -->
+    <uses-feature android:name="android.hardware.camera"/>
+
+    <!-- Write Files -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <application
+            android:allowBackup="true"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true">
+
+        <!--<activity
+                android:name=".activity.FuguChannelsActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/FuguTheme"/>-->
+        <activity
+                android:name=".activity.FuguChatActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/FuguTheme"
+                android:windowSoftInputMode="stateHidden|adjustResize">
+            <!--android:launchMode="singleTask"-->
+        </activity>
+
+        <activity android:name=".activity.ChannelActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FuguTheme"/>
+
+        <!--<activity
+                android:name=".agent.AgentListActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/FuguTheme"/>
+
+
+        <activity android:name=".agent.AgentChatActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/FuguTheme"/>
+
+        <activity android:name=".agent.AgentChatOptions"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/FuguTheme"/>
+
+        <activity android:name=".agent.AgentBroadcastActivity"
+                  android:screenOrientation="portrait"
+                  android:windowSoftInputMode="stateHidden"
+                  android:theme="@style/FuguTheme"/>-->
+
+        <activity android:name=".support.HippoSupportActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/FuguTheme"/>
+
+        <activity android:name=".activity.VideoPlayerActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/FuguTheme"/>
+
+        <activity android:name=".utils.filepicker.activity.ImagePickActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/FuguTheme"
+                  android:hardwareAccelerated="false"/>
+
+        <activity android:name=".utils.filepicker.activity.NormalFilePickActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/vw_FilePickerTheme"
+                  android:hardwareAccelerated="false"/>
+
+        <activity android:name=".utils.filepicker.activity.AudioPickActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/vw_FilePickerTheme"
+                  android:hardwareAccelerated="false"/>
+
+        <activity android:name=".utils.filepicker.activity.VideoPickActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/vw_FilePickerTheme"
+                  android:hardwareAccelerated="false"/>
+
+        <activity android:name=".activity.ImageDisplayActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/FuguTheme"/>
+
+        <activity android:name=".activity.CustomerInitalActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/FuguTheme"/>
+
+        <activity android:name=".activity.HippoPaymentActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/FuguTheme"/>
+
+        <activity android:name=".activity.CampaignActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/FuguTheme" />
+
+        <activity android:name=".activity.WebviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FuguTheme"/>
+
+        <activity android:name=".activity.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.StatusBarTransparent"
+            />
+        <activity android:name=".activity.ImageDisplayActivityNew"
+            android:excludeFromRecents="true"
+            android:theme="@style/Transparent"/>
+
+        <activity android:name=".activity.ProfileActivityNew"
+                android:screenOrientation="portrait"
+                android:theme="@style/FuguTheme"/>
+
+        <activity android:name=".activity.PrePaymentActivity"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="adjustPan"
+                android:theme="@style/FuguTheme"/>
+        <activity android:name=".utils.easypermissions.AppSettingsDialogHolderActivity" />
+        <activity android:name=".payment.RazorPayment" />
+
+        <receiver android:name=".receiver.FuguNetworkStateReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <service
+                android:name=".service.FuguPushIntentService"
+                android:exported="false"/>
+
+
+        <service
+                android:name=".utils.filepicker.MyForeGroundService"
+                android:enabled="true"
+                android:exported="true"/>
+
+        <!--<service
+                android:name=".agent.helper.UploadingService"
+                android:enabled="true"
+                android:exported="true"/>-->
+
+        <provider
+                android:name=".utils.filepicker.LocalStorageProvider"
+                android:authorities="${applicationId}.localstorage.documents"
+                android:enabled="false"
+                android:exported="true"
+                android:grantUriPermissions="true"
+                android:permission="android.permission.MANAGE_DOCUMENTS">
+            <intent-filter>
+                <action android:name="android.content.action.DOCUMENTS_PROVIDER"/>
+            </intent-filter>
+        </provider>
+
+        <service android:name=".service.JobSchedulerService"
+                android:permission="android.permission.BIND_JOB_SERVICE" />
+
+
+    </application>
+
+</manifest>

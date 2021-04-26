@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hippo_chat_bg"
+    tools:context="com.hippo.activity.FuguChatActivity">
+
+    <include
+        android:id="@+id/my_toolbar"
+        layout="@layout/hippo_chat_toolbar" />
+
+    <com.hippo.utils.loadingBox.ProgressWheel
+        android:id="@+id/pbPeerChat"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        wheel:matProg_barWidth="2dp"
+        wheel:matProg_fillRadius="false"
+        wheel:matProg_progressIndeterminate="true" />
+
+    <LinearLayout
+        android:id="@+id/main_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/my_toolbar"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/llInternet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/fugu_connected"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/fugu_margin_2"
+                android:textColor="@android:color/black"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <com.hippo.utils.CustomLinear
+            android:id="@+id/llRoot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <ProgressBar
+                android:id="@+id/pbLoading"
+                style="@android:style/Widget.ProgressBar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/fugu_margin_10"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMessages"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:animateLayoutChanges="false"
+                android:layerType="software"
+                android:paddingStart="@dimen/fugu_padding_5"
+                android:paddingLeft="@dimen/fugu_padding_5"
+                android:paddingEnd="@dimen/fugu_padding_15"
+                android:paddingRight="@dimen/fugu_padding_15"
+                android:paddingBottom="@dimen/fugu_padding_5" />
+
+            <!--android:layerType="software"-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSuggestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="false"
+                android:visibility="gone" />
+
+
+            <LinearLayout
+                android:id="@+id/llTyping1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fugu_margin_15"
+                android:layout_marginTop="@dimen/fugu_margin_4"
+                android:layout_marginRight="@dimen/fugu_margin_15"
+                android:layout_marginBottom="@dimen/fugu_margin_4"
+                android:background="@drawable/fugu_bg_msg_from"
+                android:gravity="center"
+                android:paddingLeft="@dimen/fugu_padding_10"
+                android:paddingEnd="@dimen/fugu_padding_10"
+                android:paddingStart="@dimen/fugu_padding_10"
+                android:paddingRight="@dimen/fugu_padding_10"
+                android:visibility="gone">
+
+                <com.hippo.utils.beatAnimation.AVLoadingIndicatorView
+                    android:id="@+id/aviTyping1"
+                    style="@style/AVLoadingIndicatorView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:indicatorColor="@color/fugu_drawable_color"
+                    app:indicatorName="BallPulseIndicator" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvClosed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fugu_margin_4"
+                android:background="@drawable/fugu_card_disabled_layout"
+                android:gravity="center"
+                android:padding="@dimen/fugu_padding_5"
+                android:text="@string/hippo_conversation_closed"
+                android:textColor="@color/fugu_theme_color_primary"
+                android:textSize="@dimen/fugu_text_size_intermediate"
+                android:visibility="gone" />
+
+            <include layout="@layout/hippo_layout_send_message" />
+
+        </com.hippo.utils.CustomLinear>
+
+
+        <TextView
+            android:id="@+id/tvDateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="@dimen/fugu_dp_6"
+            android:background="@drawable/fugu_date_colored_bg"
+            android:paddingLeft="@dimen/fugu_padding_15"
+            android:paddingTop="@dimen/fugu_padding_5"
+            android:paddingRight="@dimen/fugu_padding_15"
+            android:paddingBottom="@dimen/fugu_padding_5"
+            android:text="Today"
+            android:textColor="#000"
+            android:textSize="@dimen/fugu_text_size_small"
+            android:visibility="gone" />
+        <!--</FrameLayout>-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/retry_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_toolbar"
+        android:background="@color/fugu_not_connected"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/btnRetry"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="@string/hippo_tap_to_retry"
+            android:textColor="@color/hippo_black"
+            android:textSize="@dimen/_12ssp" />
+
+        <com.hippo.utils.loadingBox.ProgressWheel
+            android:id="@+id/retry_loader"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/fugu_padding_8"
+            android:layout_marginLeft="5dp"
+            android:visibility="gone"
+            wheel:matProg_barColor="#ffffff"
+            wheel:matProg_barWidth="2dp"
+            wheel:matProg_fillRadius="false"
+            wheel:matProg_progressIndeterminate="true"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/tvUpdatingConvo"
+            android:layout_toRightOf="@+id/tvUpdatingConvo" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvNoInternet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:padding="@dimen/fugu_padding_20"
+        android:text="@string/hippo_something_wrong"
+        android:textColor="@color/fugu_theme_color_primary"
+        android:textSize="@dimen/fugu_text_size_large"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/hippo_white"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/llTyping"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/fugu_margin_15"
+        android:layout_marginTop="@dimen/fugu_margin_4"
+        android:layout_marginRight="@dimen/fugu_margin_15"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/fugu_bg_msg_from"
+        android:gravity="center"
+        android:paddingLeft="@dimen/fugu_padding_10"
+        android:paddingRight="@dimen/fugu_padding_10"
+        android:visibility="gone">
+
+        <com.hippo.utils.beatAnimation.AVLoadingIndicatorView
+            android:id="@+id/aviTyping"
+            style="@style/AVLoadingIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:indicatorColor="@color/fugu_drawable_color"
+            app:indicatorName="BallPulseIndicator" />
+
+    </LinearLayout>
+
+</RelativeLayout>

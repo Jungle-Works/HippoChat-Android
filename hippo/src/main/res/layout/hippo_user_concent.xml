@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="end"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/root_right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/fugu_dp_35"
+        android:layout_marginRight="@dimen/fugu_dp_35"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/fugu_margin_1"
+        android:paddingBottom="@dimen/fugu_margin_1">
+
+        <RelativeLayout
+            android:id="@+id/leftrootview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/user_image"
+                style="@style/user_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+
+            <TextView
+                android:id="@+id/tvUserName"
+                style="@style/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toEndOf="@+id/user_image"
+                android:layout_toRightOf="@+id/user_image"
+                android:gravity="start"
+                android:singleLine="true"
+                android:text="Gurmail" />
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvUserName"
+                android:layout_marginEnd="@dimen/fugu_margin_6"
+                android:layout_marginRight="@dimen/fugu_margin_6"
+                android:layout_toEndOf="@+id/user_image"
+                android:layout_toRightOf="@+id/user_image"
+                android:shrinkColumns="0"
+                android:stretchColumns="1">
+
+                <TableRow
+                    android:id="@+id/driver_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/fugu_margin_2"
+                            android:layout_marginLeft="@dimen/fugu_margin_2"
+                            app:layout_constraintLeft_toRightOf="@+id/llChatLeft"
+                            tools:ignore="MissingConstraints" />
+
+                        <LinearLayout
+                            android:id="@+id/llChatLeft"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/fugu_chat_other_bg"
+                            android:gravity="start|left"
+                            android:orientation="vertical"
+                            android:paddingBottom="@dimen/fugu_margin_2"
+                            tools:ignore="MissingConstraints">
+
+                            <com.hippo.customLayout.ChatRelativeLayout
+                                android:id="@+id/rlMessagesLeft"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="@dimen/_7sdp"
+                                android:paddingTop="@dimen/_6sdp"
+                                android:paddingEnd="@dimen/_7sdp"
+                                android:paddingBottom="@dimen/_6sdp"
+                                app:child="@+id/llTime"
+                                app:parent="@+id/tvMsg">
+
+                                <TextView
+                                    android:id="@+id/tvMsg"
+                                    style="@style/receivedText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:autoLink="all"
+                                    android:breakStrategy="simple"
+                                    android:textColor="@color/fugu_primary_text_msg_from"
+                                    android:textColorLink="@color/fugu_white"
+                                    android:textIsSelectable="false"
+                                    tools:text="R" />
+
+                                <LinearLayout
+                                    android:id="@+id/llTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@+id/tvMsg"
+                                    android:layout_gravity="end|right|bottom"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:gravity="center|right"
+                                    android:orientation="horizontal"
+                                    android:visibility="visible">
+
+                                    <TextView
+                                        android:id="@+id/tvTime"
+                                        style="@style/receivedText.time"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical|end"
+                                        android:breakStrategy="simple"
+                                        android:text="12:38 PM "
+                                        android:textColor="@color/fugu_primary_text_msg_from" />
+
+                                </LinearLayout>
+
+                            </com.hippo.customLayout.ChatRelativeLayout>
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </TableRow>
+            </TableLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/fugu_margin_10"
+        android:layout_marginLeft="@dimen/fugu_margin_10"
+        android:layout_marginTop="0dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="1dp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvTagTime"
+        style="@style/text_rtl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/fugu_margin_1"
+        android:breakStrategy="simple"
+        android:paddingStart="@dimen/fugu_padding_3"
+        android:paddingLeft="@dimen/fugu_padding_3"
+        android:textColor="@color/fugu_secondary_text_msg_you"
+        android:textSize="@dimen/hippo_text_time"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/llRoot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/fugu_size_70"
+        android:layout_marginLeft="@dimen/fugu_size_70"
+        android:gravity="right|start"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/fugu_padding_20"
+        android:paddingBottom="@dimen/fugu_margin_1">
+
+        <LinearLayout
+            android:id="@+id/llMessageBgRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/user_image_right"
+            android:layout_toLeftOf="@+id/user_image_right"
+            android:background="@drawable/hippo_chat_self_bg"
+            android:orientation="vertical"
+            android:paddingRight="@dimen/fugu_margin_2"
+            android:paddingBottom="@dimen/fugu_margin_2">
+
+            <TextView
+                android:id="@+id/tvName"
+                style="@style/tvfontTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="all"
+                android:gravity="start|center_vertical"
+                android:paddingStart="@dimen/fugu_margin_10"
+                android:paddingLeft="@dimen/fugu_margin_10"
+                android:paddingTop="@dimen/fugu_margin_7"
+                android:paddingEnd="@dimen/fugu_margin_20"
+                android:paddingRight="@dimen/fugu_margin_20"
+                android:textColor="@android:color/darker_gray"
+                android:textColorLink="@android:color/darker_gray"
+                android:textIsSelectable="true"
+                android:visibility="gone" />
+
+            <com.hippo.customLayout.ChatRelativeLayout
+                android:id="@+id/rlMessagesRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_6sdp"
+                android:paddingLeft="@dimen/_6sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:paddingEnd="@dimen/_7sdp"
+                android:paddingRight="@dimen/_7sdp"
+                android:paddingBottom="@dimen/_7sdp"
+                app:child="@+id/llTimeLeft"
+                app:parent="@+id/tvMsgLeft">
+
+                <TextView
+                    android:id="@+id/tvMsgLeft"
+                    style="@style/sentText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:autoLink="all"
+                    android:gravity="start|center_vertical"
+                    android:text="R"
+                    android:textIsSelectable="false" />
+
+
+                <LinearLayout
+                    android:id="@+id/llTimeLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tvMsg"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    android:layout_marginStart="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/tvTimeLeft"
+                        style="@style/sentText.time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end"
+                        android:breakStrategy="simple"
+                        android:paddingRight="@dimen/_3sdp"
+                        android:text="3:38 PM"
+                        android:paddingEnd="@dimen/_3sdp" />
+
+                    <ImageView
+                        android:id="@+id/ivMessageState"
+                        android:layout_width="13dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingTop="@dimen/fugu_padding_3"
+                        android:paddingBottom="@dimen/fugu_padding_3"
+                        android:src="@drawable/fugu_tick_single"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+            </com.hippo.customLayout.ChatRelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

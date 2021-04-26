@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingLeft="@dimen/fugu_margin_12"
+              android:paddingRight="@dimen/fugu_margin_12"
+              android:layout_marginBottom="8dp"
+              android:layout_marginEnd="8dp"
+              android:layout_marginStart="8dp"
+              android:layout_marginTop="8dp"
+              >
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:padding="@dimen/fugu_padding_10"
+            android:layout_marginTop="@dimen/fugu_margin_15"
+            android:layout_marginBottom="@dimen/fugu_margin_10"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:background="@drawable/default_rectangular_button_empty"
+    />
+
+</LinearLayout>

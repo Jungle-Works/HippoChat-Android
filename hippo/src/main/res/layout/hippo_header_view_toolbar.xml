@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hippo.utils.hippoHeaderBehavior.HippoHeaderView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="@dimen/header_view_end_text_size"
+        android:textColor="@android:color/white"
+        android:shadowColor="@color/gray_dark"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/starLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RatingBar
+            android:id="@+id/ratingBar2"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rating="1"
+            android:numStars="1"
+            android:stepSize="0.1"
+            android:theme="@style/RatingBar" />
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_toRightOf="@+id/ratingBar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:shadowColor="@color/gray_dark"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:textColor="@android:color/white"/>
+
+    </RelativeLayout>
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/fugu_activity_horizontal_margin"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:visibility="gone"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/header_view_end_text_size"
+        android:layout_marginRight="16dp" />
+
+
+
+
+</com.hippo.utils.hippoHeaderBehavior.HippoHeaderView>

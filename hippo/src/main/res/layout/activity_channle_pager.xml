@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.hippo.utils.CustomViewPager
+        android:id="@+id/pagerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tabs"
+        android:layout_below="@+id/my_toolbar"
+        />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        style="@style/MyCustomTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        android:layout_alignParentBottom="true"
+        android:elevation="@dimen/fugu_elevation_4"
+        android:background="@color/fugu_white" />
+
+</RelativeLayout>

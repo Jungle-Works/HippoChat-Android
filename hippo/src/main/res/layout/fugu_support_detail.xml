@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fugu_white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/my_toolbar"
+        layout="@layout/fugu_layout_toolbar_center" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:splitMotionEvents="false">
+
+            <TextView
+                android:id="@+id/textViewSubtitle"
+                style="@style/hippo.subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fugu_margin_20"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/textViewDescription"
+                style="@style/hippo.text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web|email|phone"
+                android:lineSpacingExtra="1.5dp"
+                android:textColor="@color/fugu_support_description"
+                android:textSize="@dimen/fugu_text_size_big"
+                android:visibility="visible" />
+
+
+            <EditText
+                android:id="@+id/editTextMessage"
+                style="@style/hippo.Edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fugu_margin_7"
+                android:background="@drawable/hippo_dropshadow_in_white"
+                android:gravity="left"
+                android:hint="@string/fugu_leave_comment"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLines="6"
+                android:minLines="6"
+                android:overScrollMode="always"
+                android:padding="6dp"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:singleLine="false"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textViewRSOtherError"
+                style="@style/hippo.text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:elevation="@dimen/fugu_elevation_4"
+                android:textColor="@color/hippo_red"
+                android:textSize="@dimen/fugu_text_size_tiny"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/buttonSubmit"
+                style="@style/primary_button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/hippo_button_height"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/fugu_margin_10"
+                android:layout_marginRight="@dimen/fugu_margin_10"
+                android:layout_marginTop="@dimen/fugu_margin_15"
+                android:background="@drawable/fugu_main_btn_selector"
+                android:elevation="@dimen/fugu_elevation_4"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/fugu_padding_10"
+                android:paddingRight="@dimen/fugu_padding_10"
+                android:text="@string/hippo_submit"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/buttonCall"
+                style="@style/primary_button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/hippo_button_height"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/fugu_margin_10"
+                android:layout_marginRight="@dimen/fugu_margin_10"
+                android:layout_marginTop="@dimen/fugu_margin_15"
+                android:background="@drawable/fugu_main_btn_selector"
+                android:elevation="@dimen/fugu_elevation_4"
+                android:text="@string/hippo_call"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/buttonChat"
+                style="@style/primary_button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/hippo_button_height"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/fugu_margin_10"
+                android:layout_marginRight="@dimen/fugu_margin_10"
+                android:layout_marginTop="@dimen/fugu_margin_15"
+                android:background="@drawable/fugu_main_btn_selector"
+                android:elevation="@dimen/fugu_elevation_4"
+                android:text="@string/hippo_chat"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textViewScroll"
+                android:layout_width="@dimen/fugu_dp_6"
+                android:layout_height="@dimen/fugu_dp_6" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

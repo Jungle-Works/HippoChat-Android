@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fugu_chat_bg"
+    android:orientation="vertical"
+    tools:context="com.hippo.activity.FuguChannelsActivity">
+
+    <include
+        android:id="@+id/my_toolbar"
+        layout="@layout/fugu_layout_toolbar_center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:layout_below="@+id/my_toolbar"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llInternet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_toolbar"
+            android:background="@color/fugu_connected"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/fugu_margin_2"
+                android:text="Connected"
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/llInternet"
+            android:visibility="visible">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvChannels"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingBottom="40dp" />
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/hippo_bg_disabled"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvNewConversation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/fugu_margin_20"
+        android:onClick="onClick"
+        android:padding="@dimen/fugu_padding_15"
+        android:text="@string/fugu_new_conversation"
+        android:layout_alignParentBottom="true"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvNoInternet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:padding="@dimen/fugu_padding_20"
+        android:text="@string/fugu_no_internet_connection_retry"
+        android:textColor="@color/fugu_theme_color_primary"
+        android:textSize="@dimen/fugu_text_size_large"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvPoweredBy"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:visibility="gone"
+        android:text="@string/fugu_powered_by"
+        android:textColor="@color/fugu_text_color_primary"
+        android:textSize="@dimen/fugu_text_size_intermediate" />
+
+    <ImageView
+        android:id="@+id/llNoConversation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ic_hippo_no_conversation"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/noConversationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No conversation found"
+        android:visibility="gone"
+        android:layout_below="@+id/llNoConversation"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/fugu_primary_text_msg_from"
+        android:textSize="14sp"
+        android:layout_marginTop="@dimen/fugu_margin_10"/>
+
+
+    <Button
+        android:id="@+id/createBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:textAppearance="@style/TextViewBold"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:background="@drawable/hippo_button_theme_round"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:textColor="@color/fugu_white"
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:textAllCaps="false"
+        />
+
+
+    <!--<Button
+        android:id="@+id/createBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Talk to doctor"
+        android:textSize="18sp"
+        android:background="back"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginRight="40dp"
+        app:srcCompat="?attr/colorPrimary" />-->
+
+
+
+</RelativeLayout>

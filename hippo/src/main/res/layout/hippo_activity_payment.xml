@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fugu_chat_bg">
+
+    <include
+            android:id="@+id/my_toolbar"
+            layout="@layout/fugu_layout_toolbar_center"/>
+
+    <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fugu_margin_15"
+                android:layout_marginRight="@dimen/fugu_margin_15"
+                android:layout_marginTop="@dimen/fugu_margin_10"
+                android:layout_marginBottom="@dimen/fugu_margin_20"
+                android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                    app:cardElevation="@dimen/fugu_elevation_4"
+                    app:cardBackgroundColor="@color/fugu_white"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/fugu_padding_8"
+                    android:layout_height="wrap_content">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/fugu_padding_10"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/title_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fugu_title"
+                    />
+
+                    <EditText
+                            android:id="@+id/titie_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hippo_enter_title"
+                            android:minHeight="@dimen/fugu_dp_40"
+                            android:layout_margin="@dimen/fugu_margin_10"
+                            android:paddingLeft="@dimen/fugu_padding_10"
+                            android:paddingRight="@dimen/fugu_padding_10"
+                            android:maxLength="100"
+                            android:maxLines="3"
+                            android:singleLine="false"
+                            android:inputType="textCapSentences"
+                            android:background="@drawable/hippo_lead_form_data_shape"
+                    />
+
+                    <TextView
+                            android:id="@+id/currency_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hippo_currency"
+                    />
+
+                    <TextView
+                            android:id="@+id/currency_type_view"
+                            android:layout_width="match_parent"
+                            android:text="@string/hippo_usd"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/fugu_padding_10"
+                            android:layout_marginTop="@dimen/fugu_margin_10"
+                            android:drawableRight="@drawable/hippo_ic_menu_more"
+                            android:paddingRight="@dimen/fugu_padding_10"
+                            android:layout_margin="@dimen/fugu_margin_10"
+                            android:background="@drawable/hippo_lead_form_data_shape"
+                            android:layout_height="@dimen/fugu_dp_40"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    app:cardElevation="@dimen/fugu_elevation_4"
+                    app:cardBackgroundColor="@color/fugu_white"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/fugu_margin_10"
+                    android:padding="@dimen/fugu_padding_8"
+                    android:layout_height="wrap_content">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/fugu_padding_10"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/description_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hippo_title_item_description"
+                    />
+                    <EditText
+                            android:id="@+id/item_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="@dimen/fugu_dp_40"
+                            android:layout_margin="@dimen/fugu_margin_10"
+                            android:paddingLeft="@dimen/fugu_padding_10"
+                            android:paddingRight="@dimen/fugu_padding_10"
+                            android:hint="@string/hippo_item_description"
+                            android:maxLength="250"
+                            android:maxLines="4"
+                            android:singleLine="false"
+                            android:overScrollMode="always"
+                            android:scrollbarStyle="insideInset"
+                            android:scrollbars="vertical"
+                            android:inputType="textCapSentences|textMultiLine"
+                            android:background="@drawable/hippo_lead_form_data_shape"
+                    />
+
+                    <TextView
+                            android:id="@+id/price_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hippo_title_item_price"
+                    />
+                    <EditText
+                            android:id="@+id/item_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="@dimen/fugu_dp_40"
+                            android:layout_margin="@dimen/fugu_margin_10"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:hint="@string/hippo_item_price"
+                            android:maxLines="1"
+                            android:maxLength="10"
+                            android:paddingLeft="@dimen/fugu_padding_10"
+                            android:paddingRight="@dimen/fugu_padding_10"
+                            android:digits="1234567890."
+                            android:background="@drawable/hippo_lead_form_data_shape"
+                    />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/fugu_margin_10"
+                    android:layout_marginBottom="@dimen/fugu_margin_10"
+                    android:layout_height="wrap_content"/>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/total_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/fugu_dp_60"
+                        android:text="@string/hippo_total_count"
+                        android:gravity="center"
+                        android:textSize="@dimen/fugu_text_size_normal"
+                />
+
+                <TextView
+                        android:id="@+id/add_option_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/fugu_dp_60"
+                        android:text="@string/hippo_add_an_option"
+                        android:gravity="center"
+                        android:textSize="@dimen/fugu_text_size_normal"
+                        android:layout_gravity="right"
+                        android:textStyle="bold"
+                        android:layout_alignParentRight="true"
+                />
+
+
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonSubmit"
+                    style="@style/primary_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/hippo_button_height"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/fugu_margin_10"
+                    android:layout_marginRight="@dimen/fugu_margin_10"
+                    android:layout_marginTop="@dimen/fugu_margin_15"
+                    android:background="@drawable/default_rectangular_button_empty"
+                    android:elevation="@dimen/fugu_elevation_4"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/fugu_padding_10"
+                    android:paddingRight="@dimen/fugu_padding_10"
+                    android:text="@string/hippo_request_payment"
+            />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

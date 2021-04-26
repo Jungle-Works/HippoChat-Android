@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:wheel="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/hippo_transparent"
+        android:orientation="vertical">
+
+    <View
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/fugu_margin_10"
+            android:layout_marginBottom="@dimen/fugu_margin_10"
+            android:background="@drawable/curved_bg_button"
+            android:backgroundTint="@color/fugu_white" />
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_bottom_sheet"
+            android:orientation="vertical"
+            android:paddingStart="10dp"
+            android:paddingTop="@dimen/fugu_margin_10">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+        <LinearLayout
+                android:id="@+id/paymentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/fugu_padding_10"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+            <com.hippo.utils.loadingBox.ProgressWheel
+                    android:id="@+id/progress"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    wheel:matProg_barColor=""
+                    wheel:matProg_barWidth="2dp"
+                    wheel:matProg_fillRadius="false"
+                    wheel:matProg_progressIndeterminate="true" />
+
+            <TextView
+                    android:id="@+id/payment_method"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/hippo_fetching_payment_methods"
+                    android:textSize="@dimen/hippo_text_normal" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

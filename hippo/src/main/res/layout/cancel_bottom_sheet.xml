@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/hippo_transparent"
+        android:orientation="vertical">
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/hippo_cancel_round_bottom_sheet"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/title"
+                style="@style/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="29dp"
+                android:text="@string/hippo_cancel_payment"
+                android:textSize="23sp" />
+
+
+        <TextView
+                android:id="@+id/description"
+                style="@style/hippo_regular_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="23dp"
+                android:gravity="center"
+                android:text="@string/cancel_payment_text"
+                android:textSize="17.3sp" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="42dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="26dp"
+                android:orientation="horizontal">
+
+            <Button
+                    android:id="@+id/hippo_no"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:textSize="17sp"
+                    android:textColor="#6c6c6c"
+                    android:background="@drawable/hippo_cancel_btn_selector"
+                    android:text="@string/hippo_no" />
+
+            <Button
+                    android:id="@+id/hippo_yes"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:layout_marginLeft="17dp"
+                    android:textSize="17sp"
+                    android:textColor="@color/hippo_white"
+                    android:background="@drawable/hippo_yes_btn_selector"
+                    android:text="@string/hippo_yes_cancel" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

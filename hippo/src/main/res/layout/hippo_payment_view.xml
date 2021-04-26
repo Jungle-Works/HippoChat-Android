@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/select_plan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/fugu_margin_12"
+            android:layout_marginEnd="@dimen/fugu_margin_12"
+            android:background="@color/divider_color"/>
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:textAppearance="@style/TextViewBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/fugu_date_bg"
+            android:paddingLeft="@dimen/fugu_padding_15"
+            android:paddingRight="@dimen/fugu_padding_15"
+            android:paddingTop="@dimen/fugu_padding_5"
+            android:paddingBottom="@dimen/fugu_padding_5"
+            android:textColor="@color/fugu_chat_date_text"
+            android:layout_centerHorizontal="true"
+            android:text="@string/hippo_select_a_plan"
+            android:textStyle="bold"
+            android:textSize="@dimen/hippo_text_title"/>
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tagView"
+        android:paddingStart="@dimen/fugu_margin_5"
+        android:paddingEnd="@dimen/fugu_margin_5"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginTop="@dimen/fugu_margin_10"
+        android:layout_marginBottom="@dimen/fugu_margin_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:id="@+id/secureLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/fugu_margin_5"
+        >
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            />
+
+        <LinearLayout
+            android:layout_toRightOf="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:layout_toEndOf="@+id/icon"
+            android:layout_marginStart="10dp">
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextViewBold"
+                android:textSize="@dimen/fugu_text_size_tiny"
+                android:text="@string/hippo_secure_payment"/>
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextViewBold"
+                android:textSize="@dimen/fugu_text_size_tiny"
+                android:text="@string/app_guarantee"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/payBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="80dp"
+        android:paddingRight="80dp"
+        android:background="@drawable/hippo_button_theme_round"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:textColor="@color/fugu_white"
+        android:textSize="14sp"
+        android:layout_marginBottom="5dp"
+        android:textAllCaps="false"
+        android:text="@string/hippo_proceed_to_pay"/>
+
+</LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/fugu_margin_10"
+    android:paddingTop="5dp"
+    android:paddingEnd="@dimen/fugu_margin_10">
+
+    <TextView
+        android:id="@+id/tvOptionName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_toStartOf="@+id/crossIV"
+        android:layout_toLeftOf="@+id/crossIV"
+        android:maxLines="1" />
+
+    <ImageView
+        android:id="@+id/crossIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        android:src="@drawable/ic_cancel"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>
