@@ -28,7 +28,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-
 //        maven { url "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases"}
 //        maven { url "file:/Users/gurmail/Desktop/guru/jitsi-meet/jitsi-local-sdk/jitsi-lock-screen"}
 //        maven { url "file:/Users/gurmail/Desktop/desktop/jitsi-meet/jitsi-local-sdk/jitsi-meet-calling-new"}
@@ -38,6 +37,6 @@ allprojects {
     }
 }
 
-//task clean(type: Delete) {
-//    delete rootProject.buildDir
-//}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
