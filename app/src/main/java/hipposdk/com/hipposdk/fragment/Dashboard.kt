@@ -27,7 +27,7 @@ import com.hippo.model.payment.AddedPaymentGateway
 import com.hippo.model.promotional.PromotionResponse
 import com.hippo.utils.StringUtil
 import com.hippo.utils.filepicker.ToastUtil
-import com.hippocall.HippoCallConfig
+//import com.hippocall.HippoCallConfig
 import hipposdk.com.hipposdk.DemoFragment
 import kotlin.collections.ArrayList
 

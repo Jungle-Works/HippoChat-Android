@@ -4,7 +4,7 @@ import android.content.Context
 import com.hippo.LibApp
 import com.hippo.activity.HippoActivityLifecycleCallback
 import com.hippo.utils.HippoLog
-import com.hippocall.HippoCallConfig
+//import com.hippocall.HippoCallConfig
 //import com.razorpay.Checkout
 import io.paperdb.Paper
 
@@ -43,7 +43,7 @@ public class MyApplication : LibApp() {
 
     override fun onCreate() {
         HippoActivityLifecycleCallback.register(this)
-        HippoCallConfig.getInstance().setCallBackListener(this)
+//        HippoCallConfig.getInstance().setCallBackListener(this)
         super.onCreate()
         Paper.init(applicationContext)
 
